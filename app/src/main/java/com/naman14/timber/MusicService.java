@@ -275,13 +275,10 @@ public class MusicService extends Service {
         mRecentStore = RecentStore.getInstance(this);
 
 
-        mHandlerThread = new HandlerThread("MusicPlayerHandler",
-                android.os.Process.THREAD_PRIORITY_BACKGROUND);
+        mHandlerThread = new HandlerThread("MusicPlayerHandler", android.os.Process.THREAD_PRIORITY_BACKGROUND);
         mHandlerThread.start();
 
-
         mPlayerHandler = new MusicPlayerHandler(this, mHandlerThread.getLooper());
-
 
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         mMediaButtonReceiverComponent = new ComponentName(getPackageName(),
@@ -384,8 +381,7 @@ public class MusicService extends Service {
         if (D) Log.d(TAG, "Destroying service");
         super.onDestroy();
         // Remove any sound effects
-        final Intent audioEffectsIntent = new Intent(
-                AudioEffect.ACTION_CLOSE_AUDIO_EFFECT_CONTROL_SESSION);
+        final Intent audioEffectsIntent = new Intent(AudioEffect.ACTION_CLOSE_AUDIO_EFFECT_CONTROL_SESSION);
         audioEffectsIntent.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, getAudioSessionId());
         audioEffectsIntent.putExtra(AudioEffect.EXTRA_PACKAGE_NAME, getPackageName());
         sendBroadcast(audioEffectsIntent);

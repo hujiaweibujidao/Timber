@@ -54,7 +54,6 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
     private RecyclerView recyclerView;
 
     private List searchResults = Collections.emptyList();
-    ;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -77,7 +76,6 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         adapter = new SearchAdapter(this);
         recyclerView.setAdapter(adapter);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {

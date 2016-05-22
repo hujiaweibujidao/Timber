@@ -32,12 +32,10 @@ public class TimberApp extends Application {
         ImageLoaderConfiguration localImageLoaderConfiguration = new ImageLoaderConfiguration.Builder(this).build();
         ImageLoader.getInstance().init(localImageLoaderConfiguration);
         Nammu.init(this);
-
     }
 
     public static synchronized TimberApp getInstance() {
         return mInstance;
     }
-
 
 }
